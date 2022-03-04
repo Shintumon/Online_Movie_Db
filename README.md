@@ -3,11 +3,17 @@
 ## Project Setup in CMD
 
 `cd C:\Users\shint\PycharmProjects\Django_Project`
+
 `mkdir movies_product_folder`
+
 `cd movies_product_folder`
+
 `mkvirtualenv movies`
+
 `pip install django`
+
 `django-admin startproject movie_project`
+
 `cd movie_project`
 
 ## Project Setup in PyCharm
@@ -193,7 +199,7 @@ eg: `href = "{% static 'styles/bootstrap4/bootstrap.min.css' %}"`
 - Also,add the required path inside the urls.py file
 
 
-#####Deleting Data in Database from fron-end:
+##### Deleting Data in Database from fron-end:
 - Add the url in urls.py
 - Add the delete function in views.py
     ```
