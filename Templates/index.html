@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+    {% block title %}
+    <title>Home-Online Movie Store</title>
+    {% endblock %}
+{% block body %}
+
+<div class="container">
+    <br><br>
+    <a class="btn btn-primary" href="{% url 'movie_app:add_movie' %}">Add New Movie</a> <br> <br>
+</div>
+<!--                {% for i in movie_list %}-->
+<!--                <img src="{{i.img.url}}" alt="{{i.name}}" width="100" height="100">-->
+<!--                {{i.id}}.-->
+<!--                <a href="{% url 'movie_app:detail' i.id %}">-->
+<!--                <b>{{i.name}}</b> ({{i.year}}):</a> <br> <br>-->
+<!--            &lt;!&ndash;    <p> <i>{{i.desc}}</i> </p> <br>&ndash;&gt;-->
+<!--                {% endfor %}-->
+
+    <div class="container">
+        <div class="row">
+            {% for i in movie_list %}
+                <div class="col-md-3 mt-3 mb-5">
+                    <div class="card" style="width: 18rem;">
+                      <img src="{{i.img.url}}" class="card-img-top" alt="{{i.name}}" width="100" height="250">
+                      <div class="card-body">
+                            <h5 class="card-title">{{i.name}}  ({{i.year}})</h5>
+    <!--                    <p class="card-text">{{i.desc}}</p>-->
+                          <a href="{% url 'movie_app:detail' i.id %}" class="btn btn-primary stretched-link">More Info</a>
+                      </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+

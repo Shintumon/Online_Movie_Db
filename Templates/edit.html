@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+    {% block title %}
+    <title>Update {{movie.name}}</title>
+    {% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+<!--        {{form.as_p}}-->
+      <br> <br>
+
+        <div class="mb-3">
+          <label for="id_name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="id_name" name="name" maxlength="250" placeholder="Enter Name">
+        </div>
+        <div class="mb-3">
+          <label for="id_desc" class="form-label">Description</label>
+          <input type="text" class="form-control" id="id_desc" name="desc" placeholder="Update description">
+        </div>
+        <div class="mb-3">
+          <label for="id_year" class="form-label">Year</label>
+          <input type="text" class="form-control" id="id_year" name="year" placeholder="Enter Year">
+        </div>
+
+          <div class="mb-3">
+            <label for="id_img">Current Image:</label><a href="/media/assets/image/reacher.jpg">assets/image/reacher.jpg</a>
+          </div>
+          <div class="mb-3">
+            <input type="file" class="form-control" name="img" accept="image/*" id="id_img">
+          </div>
+
+         <button type="submit" class="btn btn-primary">Update</button>
+
+    </form>
+</div>
+{% endblock %}
+
